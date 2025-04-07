@@ -37,6 +37,18 @@ export const employeeDataApi = {
   }
 };
 
+// API helper functions for Full Employee Data (HRMS)
+export const fullEmployeeDataApi = {
+  getAll: async () => {
+    const response = await api.get(`/hrms/api/v1/full_employee_data?api_key=${API_KEY}`);
+    return response.data;
+  },
+  getById: async (id: string) => {
+    const response = await api.get(`/hrms/api/v1/full_employee_data/${id}?api_key=${API_KEY}`);
+    return response.data;
+  }
+};
+
 // API helper functions for Employee Insurance Data (HRMS)
 export const employeeInsuranceDataApi = {
   getById: async (id: string) => {
@@ -167,5 +179,6 @@ export default {
   payrollApi,
   salaryInfoApi,
   taxesApi,
-  companyPoliciesApi
+  companyPoliciesApi,
+  fullEmployeeDataApi
 }; 

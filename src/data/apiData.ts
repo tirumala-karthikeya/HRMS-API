@@ -218,6 +218,85 @@ export const apiEndpoints = {
     }
   },
   
+  // Full Employee Data endpoints (HRMS)
+  "get-full-employee-data-by-id": {
+    id: "get-full-employee-data-by-id",
+    category: "Employee Data",
+    title: "Get Full Employee Data by ID",
+    method: "GET",
+    baseUrl: "https://hrms-api.xpectrum-ai.com",
+    path: "/hrms/api/v1/full_employee_data/{employee_id}",
+    queryParams: [
+      { name: "api_key", type: "string", required: true, description: "API Key for authentication", example: "xpectrum_api_key_123@ai" }
+    ],
+    pathParams: [
+      { name: "employee_id", type: "string", required: true, description: "Unique identifier for the employee", examples: ["EM11188", "EM6265", "EM21821"] }
+    ],
+    responseExample: {
+      "employee_data": {
+        "employee_id": "EM11188",
+        "first_name": "Brandon",
+        "last_name": "Davis",
+        "email": "garnernathan@example.org",
+        "phone_number": "+1-809-288-5165",
+        "hire_date": "2024-12-30",
+        "job_title": "Tourism officer",
+        "job_id": 319,
+        "gov_id": "361-14-9469",
+        "hiring_manager_id": "E004",
+        "hr_manager_id": "E005",
+        "marital_status": "single",
+        "state": "Oregon",
+        "emergency_contact_name": "Brittney Olson",
+        "emergency_contact_phone": "258-651-4936",
+        "sex": "Male",
+        "department": "White Ltd",
+        "date_of_birth": "1995-06-02",
+        "status": "Active"
+      },
+      "employee_insurance_data": {
+        "employee_id": "EM11188",
+        "plan_name": "SecureHealth",
+        "insurance_plan_id": "INS003",
+        "enrollment_date": "2024-12-19",
+        "coverage_type": "employee_only",
+        "employee_contribution": "165.78",
+        "enrollment_time": null
+      },
+      "harassment_reports": [],
+      "insurance_data": null,
+      "leave_balance_data": {
+        "employee_id": "EM11188",
+        "annual_leave_balance": 25,
+        "sick_leave_balance": 13,
+        "personal_leave_balance": 19,
+        "unpaid_leave_taken": 0,
+        "leave_balance_updated_date": "2025-02-28"
+      },
+      "leave_requests": [],
+      "payroll": {
+        "employee_id": "EM11188",
+        "base_salary": "85621.04",
+        "federal_tax": "14144.13",
+        "state_tax": "0.00",
+        "total_tax": "14144.13",
+        "month": "April",
+        "salary_received_day": "2024-04-30"
+      },
+      "salary_info": {
+        "employee_id": "EM11188",
+        "base_salary": "85621.04",
+        "salary_type": "Annual",
+        "bonus": "4187.40",
+        "commission": "4338.90",
+        "currency": "USD",
+        "salary_grade": "Mid",
+        "last_salary_increase_date": "2024-07-01"
+      }
+    }
+  },
+  
+  
   // Employee Insurance Data endpoints (HRMS)
   "get-employee-insurance-data": {
     id: "get-employee-insurance-data",
